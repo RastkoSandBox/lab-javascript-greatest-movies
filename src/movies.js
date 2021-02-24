@@ -1,9 +1,61 @@
+
+
+
 // Iteration 1: All directors? - Get the array of all directors.
 // _Bonus_: It seems some of the directors had directed multiple movies so they will pop up multiple times in the array of directors. How could you "clean" a bit this array and make it unified (without duplicates)?
 
+function getAllDirectors(array) {
+    let directors = []
+    // map prima fju koju cemo izvrsiti nad svakim elementom niza
+    array.map((movie) => {
+        // console.log(movie.director, movie.year, movie.duration)
+        // console.log(movie.director, directors.includes(movie.director))
+        if (!directors.includes(movie.director)) {
+            directors.push(movie.director)
+        }
+    })
+    // console.log(directors)
+    return directors
+}
+let dir = getAllDirectors(movies)
+console.log(dir)
+
+
+let arrayB = [1, 2, 3]
+let novi = arrayB.map(a => a * 2)
+console.log(novi)
+
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
 
+function howManymovies(arr) {
+    // filter prima uslov i ako uslov nije zadoviljen, onda taj element izbacuje iz liste
+    // filter vraca u novi niz elemente koji zadovoljavaju uslov
+    let drama = arr.filter((movie) =>
+        movie.genre.includes('Drama')
+    )
+
+    return drama
+}
+let a = howManymovies(movies)
+console.log(a)
+
+
+
 // Iteration 3: All rates average - Get the average of all rates with 2 decimals
+
+function ratesAvarage(arr) {
+    let total = arr.reduce((acc, curr) => {
+
+        return acc + curr.rate
+    }, 0)
+
+    const l = arr.length
+
+    return total / l
+
+}
+const avg = ratesAvarage(movies)
+console.log('avg is', avg)
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
 
