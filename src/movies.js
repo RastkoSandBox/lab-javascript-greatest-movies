@@ -64,9 +64,6 @@ function dramaMoviesRate(arr) {
         return movie.genre.includes('Drama')
     })
     return ratesAvarage(dramaOnly)
-
-
-
 }
 let dramaProsek = dramaMoviesRate(movies)
 console.log('Drama Filmovi Prosek', dramaProsek)
@@ -75,27 +72,41 @@ console.log('Drama Filmovi Prosek', dramaProsek)
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 
 function orderByYear(arr) {
-    let byYear = arr.sort((a, b) => {
-        if (a.year > b.year) {
-            return -1
-        }
-        if (a.year < b.year) {
-            return 1
-        }
-        else {
-            return a.title.localeCompare(b.title)
-        }
+    // let byYear = arr.sort((a, b) => {
+    //     if (a.year > b.year) {
+    //         return -1
+    //     }
+    //     if (a.year < b.year) {
+    //         return 1
+    //     }
+    //     else {
+    //         return a.title.localeCompare(b.title)
+    //     }
+    // })
+    // arr.sort(function (a, b) { return a.year - b.year });
+    // if (a.year === b.year) {
+    //     arr.sort(function (a, b) {
+    //         var textA = a.title.toUpperCase();
+    //         var textB = b.title.toUpperCase();
+    //         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    //     });
+    // }
 
-    })
-    return [...byYear]
+    // list.sort((a, b) => (a.color > b.color) ? 1 : (a.color === b.color) ? ((a.size > b.size) ? 1 : -1) : -1 )
+    // return arr.sort(function (a, b) {
+    //     var textA = a.title.toUpperCase();
+    //     var textB = b.title.toUpperCase();
+    //     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    // });
 }
-let s = orderByYear(movies)
-console.log(s)
+// let s = orderByYear(movies)
+// console.log(s)
+
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 
 function orderAlphabetically(arr) {
 
-    let poImenu = [...arr].sort((a, b) => {
+    let poImenu = arr.sort((a, b) => {
         return a.title.localeCompare(b.title)
     })
     // Sta znaci localCompare i [...arr] ?
