@@ -59,8 +59,38 @@ console.log('avg is', avg)
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
 
+function dramaMoviesRate(arr) {
+    let dramaOnly = arr.filter((movie) => {
+        return movie.genre.includes('Drama')
+    })
+    return ratesAvarage(dramaOnly)
+
+
+
+}
+let dramaProsek = dramaMoviesRate(movies)
+console.log('Drama Filmovi Prosek', dramaProsek)
+
+
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 
+function orderByYear(arr) {
+    let byYear = arr.sort((a, b) => {
+        if (a.year > b.year) {
+            return -1
+        }
+        if (a.year < b.year) {
+            return 1
+        }
+        else {
+            return a.title.localeCompare(b.title)
+        }
+
+    })
+    return [...byYear]
+}
+let s = orderByYear(movies)
+console.log(s)
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
