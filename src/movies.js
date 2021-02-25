@@ -93,6 +93,20 @@ let s = orderByYear(movies)
 console.log(s)
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 
+function orderAlphabetically(arr) {
+
+    let poImenu = [...arr].sort((a, b) => {
+        return a.title.localeCompare(b.title)
+    })
+    // Sta znaci localCompare i [...arr] ?
+    let prvih20 = poImenu.slice(0, 20).map((item) => {
+        return item.title
+    })
+    return prvih20
+}
+let filmovi = orderAlphabetically(movies)
+console.log('Prvih 20 Filmova', filmovi)
+
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 
 // BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
